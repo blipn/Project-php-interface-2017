@@ -1,3 +1,7 @@
 gt4_e_interface_homepage:
     path:     /
     defaults: { _controller: GT4EInterfaceBundle:Default:index }
+
+gt4_e_interface_ressources:
+    path:     /ressources
+    defaults: { _controller: GT4EInterfaceBundle:Default:ressources }

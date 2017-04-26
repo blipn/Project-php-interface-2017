@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('GT4EInterfaceBundle:Default:index.html.twig');
     }
+
+    public function ressourcesAction()
+    {
+        return $this->render('GT4EInterfaceBundle:Default:index.html.twig');
+    }
 }
