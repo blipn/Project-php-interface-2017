@@ -1,3 +1,7 @@
+gt4_e_interface:
+    resource: "@GT4EInterfaceBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
