@@ -1,0 +1,161 @@
+body{
+    background-color: #f2f2f2;
+    font-family: Ubuntu;
+}
+
+h1, h2, h3{
+    font-weight: bolder;
+}
+
+.menuImgs{
+    font-size: 10vh;
+}
+
+.menu{
+    background: #34495e;
+    text-align: center;
+    position: fixed;
+    height: 100vh;
+}
+
+.centralContainer{
+    margin-left: 21%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.iconTabs, .iconTabsSelected, .iconTabs:hover, .iconTabsSelected:hover{
+    height: 16.5vh;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.5vh;
+    text-decoration: none;
+}
+
+.iconTabs{
+    -webkit-filter: opacity(30%);
+    filter: opacity(30%);
+    transition: 0.1s;
+}
+
+.iconTabs:hover{
+    -webkit-filter: opacity(100%);
+    filter: opacity(100%);
+    transition: 0.5s;
+}
+
+.iconTabsSelected{
+    -webkit-filter: drop-shadow(0px 6px 6px #000000);
+    filter: drop-shadow(0px 6px 6px #000000);
+}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.alignIcon{
+    font-size: large;
+    vertical-align: sub;
+}
+
+.midIcon{
+    color: gray;
+    margin-right: 10px;
+}
+
+.jumbotron {
+     padding: 10px !important;
+}
+
+.well{
+    background-color: white !important;
+}
+
+.imgList{
+    width: 46px;
+}
+
+.imgPerso{
+    font-size: 150px;
+    padding: 20px !important;
+    margin: 5px;
+    border-right-style: inset;
+    margin-right: 15px !important;
+}
+
+.miniText{
+    font-size: smaller !important;
+    margin: 0 !important;
+    display: inline-block;
+    margin-right: 20px !important;
+}
+
+.media{
+    margin-bottom: 10px;
+}
+
+.equipement{
+    height: 55vh;
+    overflow: auto;
+}
+
+.flex{
+    display: inline-flex;
+    width: 85%;
+}
+
+.form-control{
+    font-size: inherit;
+    height: 100%;
+    padding: 0px 12px;
+}
+
+.topRightCorner{
+    float: right;
+}
+
+.activite{
+    height: 20vh;
+}
+
+.tabcontent{
+    padding: inherit;
+    border: inherit;
+    border-top: inherit;
+}
+
+.gray{
+    color:gray;
+}

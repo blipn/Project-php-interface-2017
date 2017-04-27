@@ -16,7 +16,21 @@
 
             {% include 'GT4EInterfaceBundle:Default:alert.html.twig' %}
 
-            {% include 'GT4EInterfaceBundle:Default:dashboard.html.twig' %}
+                <div id="dashboard" class="tabcontent">
+                    {% include 'GT4EInterfaceBundle:Default:dashboard.html.twig' %}
+                </div>
+
+                <div id="ressources" class="tabcontent">
+                    {% include 'GT4EInterfaceBundle:Default:ressources.html.twig' %}
+                </div>
+
+                <div id="support" class="tabcontent">
+                    {% include 'GT4EInterfaceBundle:Default:support.html.twig' %}
+                </div>
+
+                <div id="faq" class="tabcontent">
+                    {% include 'GT4EInterfaceBundle:Default:faq.html.twig' %}
+                </div>
 
         </div>
     </div>

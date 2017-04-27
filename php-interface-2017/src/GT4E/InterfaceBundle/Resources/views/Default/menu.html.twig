@@ -1,9 +1,9 @@
 <div class="col-md-2 menu">
     <br>
-    <div onclick="location.href = '/';" class="iconTabsSelected"><img alt="Tableau de bord" src="bundles/gt4einterface/ico/dashboard.png" class="menuImgs"><p>TABLEAU DE BORD</p></div>
-    <div onclick="location.href = '/ressources';" class="iconTabs"><img alt="Ressources" src="bundles/gt4einterface/ico/paperclip.png" class="menuImgs"><p>RESSOURCES</p></div>
-    <div class="iconTabs"><img alt="Support" src="bundles/gt4einterface/ico/safety.png" class="menuImgs"><p>SUPPORT</p></div>
-    <div class="iconTabs"><img alt="FAQ" src="bundles/gt4einterface/ico/book.png" class="menuImgs"><p>FAQ</p></div>
+    <div onclick="openTab(event, 'dashboard')" id="menuDashboard" class="iconTabsSelected tablinks" ><i class="fa fa-tachometer menuImgs" aria-hidden="true"></i><p>TABLEAU DE BORD</p></div>
+    <div onclick="openTab(event, 'ressources')" id="menuRessources" class="iconTabs tablinks"><i class="fa fa-paperclip menuImgs" aria-hidden="true"></i><p>RESSOURCES</p></div>
+    <div onclick="openTab(event, 'support')" id="menuSupport" class="iconTabs tablinks"><i class="fa fa-life-ring menuImgs" aria-hidden="true"></i><p>SUPPORT</p></div>
+    <div onclick="openTab(event, 'faq')" id="menuFaq" class="iconTabs tablinks"><i class="fa fa-book menuImgs" aria-hidden="true"></i><p>FAQ</p></div>
     <div class="iconTabs"></div>
-    <div class="iconTabs"><img alt="Déconnexion" src="bundles/gt4einterface/ico/signout.png" class="menuImgs"><p>DECONNEXION</p></div>
+    <div class="iconTabs"><i class="fa fa-sign-out menuImgs" aria-hidden="true"></i><p>DECONNEXION</p></div>
 </div>
