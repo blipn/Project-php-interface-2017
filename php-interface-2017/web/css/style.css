@@ -7,8 +7,17 @@ h1, h2, h3{
     font-weight: bolder;
 }
 
+thead{
+    border-bottom-style: solid;
+    background-color: #c0c0c0;
+}
+
 .menuImgs{
     font-size: 10vh;
+}
+
+.alert-dismissable .close, .alert-dismissible .close{
+    top: 10px;
 }
 
 .menu{
@@ -85,9 +94,20 @@ div.tab button.active {
     border-top: none;
 }
 
-.alignIcon{
-    font-size: large;
-    vertical-align: sub;
+.alert{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-color: #ff9898;
+}
+
+.warningText{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.warningImg{
+    vertical-align: middle;
+    opacity: 0.5;
 }
 
 .midIcon{
@@ -100,7 +120,13 @@ div.tab button.active {
 }
 
 .well{
-    background-color: white !important;
+    background-color: white;
+    overflow: auto;
+}
+
+.overFlow{
+    margin: auto;
+    overflow: auto;
 }
 
 .imgList{
@@ -158,4 +184,83 @@ div.tab button.active {
 
 .gray{
     color:gray;
+}
+
+.faq1{
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    padding: 0;
+}
+
+.faq2{
+    background-color: white;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    padding-bottom: 0px;
+}
+
+.active > a{
+    background-color: lightgrey !important;
+}
+
+li > a{
+    color: gray;
+    border-radius: 0px !important;
+    width: 100%;
+}
+
+.panel-title {
+    color: gray;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+.panel-faq{
+    border-radius: 0px !important;
+}
+
+.panel-heading{
+    padding: 0px;
+}
+
+.panel-heading > a:hover{
+    text-decoration: none;
+}
+
+.panel-heading > a{
+    text-decoration: none;
+}
+
+.smallFont{
+    font-size: 10px;
+}
+
+.pSupport{
+    font-size: inherit !important;
+    font-weight: bold !important;
+    font-size: 1.1vw !important;
+}
+
+.icoSupport{
+    text-align: center;
+    font-size: 2em;
+    padding: 9px;
+    overflow: hidden;
+    margin: 0;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icoSupportJumbo:hover{
+    background-color: lightgray;
+}
+
+.fullWidth{
+    width: 100%;
 }
