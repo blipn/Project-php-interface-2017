@@ -2,6 +2,10 @@ gt4_e_interface_homepage:
     path:     /
     defaults: { _controller: GT4EInterfaceBundle:Default:index }
 
-gt4_e_interface_ressources:
+gt4_e_interface_login:
     path:     /login
     defaults: { _controller: GT4EInterfaceBundle:Default:login }
+
+gt4_e_interface_admin:
+    path:     /admin
+    defaults: { _controller: GT4EInterfaceBundle:Default:admin }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% include 'GT4EInterfaceBundle:Default:head.html.twig' %}
+
+</head>
+<body onload="openTab('menuDashboard', 'dashboard'); // on charge la tab 1">
+
+<div class="container-fluid">
+    <div class="row">
+
+        {% include 'GT4EInterfaceBundle:Default:menu.html.twig' %}
+
+        <div class="col-md-9 centralContainer">
+
+            {#{% include 'GT4EInterfaceBundle:Default:alert.html.twig' %}#}
+
+                <div id="dashboard" class="tabcontent">
+                    <p>Créer / Modifier un user - Envoyer Alerte</p>
+                    {#{% include 'GT4EInterfaceBundle:Default:dashboard.html.twig' %}#}
+                </div>
+
+                <div id="ressources" class="tabcontent">
+                    <p>Ajouter des logiciels, des images et de la documentation</p>
+                    {#{% include 'GT4EInterfaceBundle:Default:ressources.html.twig' %}#}
+                </div>
+
+                <div id="support" class="tabcontent">
+                    <p>Créer des SAV pour un client et mettre à jour le suivi SAV.</p>
+                    {#{% include 'GT4EInterfaceBundle:Default:support.html.twig' %}#}
+                </div>
+
+                <div id="faq" class="tabcontent">
+                    <p>Modifier et ajouter des questions/réponses dans la FAQ.</p>
+                    {#{% include 'GT4EInterfaceBundle:Default:faq.html.twig' %}#}
+                </div>
+
+        </div>
+    </div>
+</div>
+
+{% include 'GT4EInterfaceBundle:Default:scripts.html.twig' %}
+
+</body>
+</html>

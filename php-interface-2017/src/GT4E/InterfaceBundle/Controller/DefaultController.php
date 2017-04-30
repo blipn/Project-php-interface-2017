@@ -15,4 +15,9 @@ class DefaultController extends Controller
     {
         return $this->render('GT4EInterfaceBundle:Default:login.html.twig');
     }
+
+    public function adminAction()
+    {
+        return $this->render('GT4EInterfaceBundle:Default:admin.html.twig');
+    }
 }
