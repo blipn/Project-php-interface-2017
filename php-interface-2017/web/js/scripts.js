@@ -33,5 +33,3 @@ function openTab(evt, tab) {
         evt.currentTarget.className = "iconTabsSelected tablinks";
     }
 }
-
-openTab("menuDashboard", 'dashboard'); // on charge la tab 1
