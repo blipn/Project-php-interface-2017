@@ -11,8 +11,8 @@ class DefaultController extends Controller
         return $this->render('GT4EInterfaceBundle:Default:index.html.twig');
     }
 
-    public function ressourcesAction()
+    public function loginAction()
     {
-        return $this->render('GT4EInterfaceBundle:Default:index.html.twig');
+        return $this->render('GT4EInterfaceBundle:Default:login.html.twig');
     }
 }
