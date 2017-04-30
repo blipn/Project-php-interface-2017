@@ -1,3 +1,13 @@
+
+// $.ajax({
+//     method: "POST",
+//     url: "some.php",
+//     data: { name: "John", location: "Boston" }
+//     })
+//     .done(function( msg ) {
+//         alert( "Data Saved: " + msg );
+//     });
+
 function openTab(evt, tab) {
     // Declare all variables
     var i, tabcontent, tablinks;
