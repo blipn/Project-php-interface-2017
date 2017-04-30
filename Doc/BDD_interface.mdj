@@ -903,7 +903,7 @@
 								"reference": {
 									"$ref": "AAAAAAFbsGBQ2bAoV2g="
 								},
-								"cardinality": "0..*"
+								"cardinality": "1"
 							},
 							"end2": {
 								"_type": "ERDRelationshipEnd",
@@ -1473,7 +1473,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 517,
-											"top": 298,
+											"top": 283,
 											"width": 176.76171875,
 											"height": 13,
 											"autoResize": false
@@ -1491,7 +1491,7 @@
 									"left": 512,
 									"top": 263,
 									"width": 186.76171875,
-									"height": 53,
+									"height": 38,
 									"autoResize": false
 								}
 							],
@@ -1688,7 +1688,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFbsGo5sXh/KRk="
 									},
-									"visible": false,
+									"visible": true,
 									"enabled": true,
 									"lineColor": "#000000",
 									"fillColor": "#ffffff",
@@ -1709,6 +1709,7 @@
 									},
 									"edgePosition": 1,
 									"underline": false,
+									"text": "Afficher Alerte",
 									"horizontalAlignment": 2,
 									"verticalAlignment": 5,
 									"wordWrap": false
