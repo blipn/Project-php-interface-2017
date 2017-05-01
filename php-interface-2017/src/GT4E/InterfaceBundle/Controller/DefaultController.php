@@ -4,6 +4,7 @@ namespace GT4E\InterfaceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use GT4E\InterfaceBundle\Entity\Utilisateur;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
@@ -36,20 +37,25 @@ class DefaultController extends Controller
     public function createClientAction(Request $request)
     {
 
-        $user = new Utilisateur();
-        $user->setNom($request->get('name'))
-            ->setTelephone($request->get('phone'))
-            ->setMail($request->get('email'))
-            ->setAddresse($request->get('addr'))
-            ->setAlert($request->get('alert'))
-            ->setHash(hash('sha256', $request->get('password')))
-            ->setLogo($request->get('img'));
+        try{
+            $user = new Utilisateur();
+            $user->setNom($request->get('name'))
+                ->setTelephone($request->get('phone'))
+                ->setMail($request->get('email'))
+                ->setAdresse($request->get('addr'))
+                ->setAlert($request->get('alert'))
+                ->setHash(hash('sha256', $request->get('password')))
+                ->setLogo($request->get('img'));
 
-        $em = $this->get('doctrine.orm.entity_manager');
-        $em->persist($user);
-        $em->flush();
+            $em = $this->get('doctrine.orm.entity_manager');
+            $em->persist($user);
+            $em->flush();
 
-        return true;
+            return "ok";
+        }catch (Exception $e){
+            return $e;
+        }
+
     }
 
 
