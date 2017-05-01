@@ -103,11 +103,11 @@ class Equipement
     /**
      * Set utilisateur
      *
-     * @param \AppBundle\Entity\Utilisateur $utilisateur
+     * @param \GT4E:InterfaceBundle\Entity\Utilisateur $utilisateur
      *
      * @return Equipement
      */
-    public function setUtilisateur(\AppBundle\Entity\Utilisateur $utilisateur = null)
+    public function setUtilisateur(Utilisateur $utilisateur = null)
     {
         $this->utilisateur = $utilisateur;
 
@@ -117,7 +117,7 @@ class Equipement
     /**
      * Get utilisateur
      *
-     * @return \AppBundle\Entity\Utilisateur
+     * @return GT4E:InterfaceBundle\Entity\Utilisateur
      */
     public function getUtilisateur()
     {

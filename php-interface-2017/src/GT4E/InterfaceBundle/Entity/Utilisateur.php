@@ -213,11 +213,11 @@ class Utilisateur
     /**
      * Add equipement
      *
-     * @param \AppBundle\Entity\Equipement $equipement
+     * @param GT4E:InterfaceBundle\Entity\Equipement $equipement
      *
      * @return Utilisateur
      */
-    public function addEquipement(\AppBundle\Entity\Equipement $equipement)
+    public function addEquipement(Equipement $equipement)
     {
         $this->equipements[] = $equipement;
 
@@ -227,9 +227,9 @@ class Utilisateur
     /**
      * Remove equipement
      *
-     * @param \AppBundle\Entity\Equipement $equipement
+     * @param GT4E:InterfaceBundle\Entity\Equipement $equipement
      */
-    public function removeEquipement(\AppBundle\Entity\Equipement $equipement)
+    public function removeEquipement (Equipement $equipement)
     {
         $this->equipements->removeElement($equipement);
     }

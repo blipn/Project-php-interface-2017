@@ -15,8 +15,19 @@ use Symfony\Component\Serializer\Serializer;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
+        if ( ! $request->get('user') ||  !$request->get('password') )
+            return $this->render('GT4EInterfaceBundle:Default:login.html.twig');
+        else {
+            $repository = $this->getDoctrine()->getRepository('GT4EInterfaceBundle:Utilisateur');
+            $user = $repository->findOneByNom($request->get('user'));
+            $pass = hash('sha256', $request->get('password'));
+            if ($pass == $user->getHash()){
+                
+            }
+
+        }
         return $this->render('GT4EInterfaceBundle:Default:index.html.twig');
     }
 
@@ -41,7 +52,7 @@ class DefaultController extends Controller
         return new Response($jsonContent);
     }
 
-    public function getAllClientsAction(Request $request){
+    public function getAllClientsAction(){
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizers = array(new ObjectNormalizer());
         $serializer = new Serializer($normalizers, $encoders);

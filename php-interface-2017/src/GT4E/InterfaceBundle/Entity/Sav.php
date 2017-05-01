@@ -142,11 +142,11 @@ class Sav
     /**
      * Set utilisateur
      *
-     * @param \AppBundle\Entity\Utilisateur $utilisateur
+     * @param GT4E:InterfaceBundle\Entity\Utilisateur $utilisateur
      *
      * @return Sav
      */
-    public function setUtilisateur(\AppBundle\Entity\Utilisateur $utilisateur = null)
+    public function setUtilisateur(Utilisateur $utilisateur = null)
     {
         $this->utilisateur = $utilisateur;
 
@@ -156,7 +156,7 @@ class Sav
     /**
      * Get utilisateur
      *
-     * @return \AppBundle\Entity\Utilisateur
+     * @return GT4E:InterfaceBundle\Entity\Utilisateur
      */
     public function getUtilisateur()
     {
