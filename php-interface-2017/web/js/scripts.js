@@ -75,9 +75,6 @@ function updateListeClient() {
         .done(function (msg) {
             console.log("Data Recieved: " + msg);
             liste.innerHTML = "";
-            let option = document.createElement("option");
-            option.setAttribute("value", "Nouveau Client");
-            liste.appendChild(option);
             if (msg == null) return;
             msg = JSON.parse(msg);
             console.log(msg);
@@ -104,7 +101,7 @@ function updateClient() {
     let password = $('#passwordClient').val();
     let img = $('#imgClient').val();
 
-    if (client == "Nouveau Client") {
+    if (client == "") {
         //on créé
         $.ajax({
             method: "POST",

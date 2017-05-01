@@ -51,8 +51,6 @@ class DefaultController extends Controller
 
         $jsonContent = $serializer->serialize($users, 'json');
         return new Response($jsonContent);
-
-
     }
 
     public function updateClientAction(Request $request)
