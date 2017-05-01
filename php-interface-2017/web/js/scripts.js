@@ -33,3 +33,8 @@ function openTab(evt, tab) {
         evt.currentTarget.className = "iconTabsSelected tablinks";
     }
 }
+
+function disconnect() {
+    //logout +
+    window.location = '/login'
+}
