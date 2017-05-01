@@ -23,12 +23,13 @@ class DefaultController extends Controller
             $repository = $this->getDoctrine()->getRepository('GT4EInterfaceBundle:Utilisateur');
             $user = $repository->findOneByNom($request->get('user'));
             $pass = hash('sha256', $request->get('password'));
-            if ($pass == $user->getHash()){
-                
+            if ($user) {
+                if ($pass == $user->getHash()) {
+                    return $this->render('GT4EInterfaceBundle:Default:index.html.twig');
+                }
             }
-
         }
-        return $this->render('GT4EInterfaceBundle:Default:index.html.twig');
+        return $this->render('GT4EInterfaceBundle:Default:login.html.twig');
     }
 
     public function loginAction()
