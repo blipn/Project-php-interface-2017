@@ -22,9 +22,9 @@ class Utilisateur
     private $id;
 
     /**
-     * @ORM\Column(name="login", type="string", length=255)
+     * @ORM\Column(name="alert", type="string", length=255)
      */
-    private $login;
+    private $alert;
 
     /**
      * @ORM\Column(name="hash", type="string", length=255)
@@ -41,9 +41,9 @@ class Utilisateur
     /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="string", length=255)
+     * @ORM\Column(name="adresse", type="string", length=255)
      */
-    private $prenom;
+    private $adresse;
 
 
 
@@ -107,30 +107,6 @@ class Utilisateur
     public function getNom()
     {
         return $this->nom;
-    }
-
-    /**
-     * Set prenom
-     *
-     * @param string $prenom
-     *
-     * @return Utilisateur
-     */
-    public function setPrenom($prenom)
-    {
-        $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * Get prenom
-     *
-     * @return string
-     */
-    public function getPrenom()
-    {
-        return $this->prenom;
     }
 
     /**
@@ -256,30 +232,6 @@ class Utilisateur
     public function removeEquipement(\AppBundle\Entity\Equipement $equipement)
     {
         $this->equipements->removeElement($equipement);
-    }
-
-    /**
-     * Set login
-     *
-     * @param string $login
-     *
-     * @return Utilisateur
-     */
-    public function setLogin($login)
-    {
-        $this->login = $login;
-
-        return $this;
-    }
-
-    /**
-     * Get login
-     *
-     * @return string
-     */
-    public function getLogin()
-    {
-        return $this->login;
     }
 
     /**

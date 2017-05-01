@@ -1,6 +1,6 @@
 
 <label>Selectionnez un client</label><br>
-<input list="client" name="client">
+<input list="client" name="client" id="clientInput">
 <datalist id="client">
     <option value="Nouveau Client">
     <option value="Client1">
@@ -8,6 +8,7 @@
     <option value="Client3">
     <option value="Client4">
 </datalist>
+<button onclick="selectClient()" class="btn btn-default">Selectionner</button>
 
 <div class="media">
     <i class="fa fa-file-image-o pull-left imgPerso gray" aria-hidden="true"></i>
@@ -16,8 +17,9 @@
         <h4 class="flex"><span class="glyphicon glyphicon-earphone midIcon"></span><input type="text" class="form-control2 form-control" id="phonelClient" value=""></h4>
         <h4 class="flex"><span class="glyphicon glyphicon-envelope midIcon"></span><input type="email" class="form-control2 form-control" id="emailClient" value=""></h4>
         <h4 class="flex"><span class="glyphicon glyphicon-map-marker midIcon"></span><input type="text" class="form-control2 form-control" id="addrClient" value=""></h4>
+        <h4 class="flex"><span class="glyphicon glyphicon-lock midIcon"></span><input type="password" class="form-control2 form-control" id="passwordClient" value=""></h4>
         <h4 class="flex"><span class="glyphicon glyphicon glyphicon-info-sign midIcon"></span><input type="text" class="form-control2 form-control" id="alertClient" value=""></h4>
         <h4 class="flex"><span class="glyphicon glyphicon-picture midIcon"></span><input type="file" class="form-control2 form-control" id="imgClient" value=""></h4>
-        <br><button type="submit" href="#panel-client" data-toggle="tab" class="btn btn-default">Envoyer</button>
+        <br><button onclick="updateClient()" class="btn btn-default">Envoyer</button>
     </div>
 </div>

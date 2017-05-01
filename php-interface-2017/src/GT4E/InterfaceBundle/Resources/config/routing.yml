@@ -9,3 +9,18 @@ gt4_e_interface_login:
 gt4_e_interface_admin:
     path:     /admin
     defaults: { _controller: GT4EInterfaceBundle:Default:admin }
+
+gt4_e_interface_adminGetClient:
+    path:     /admin/getClient
+    defaults: { _controller: GT4EInterfaceBundle:Default:getClient }
+    methods:  [POST]
+
+gt4_e_interface_adminUpdateClient:
+    path:     /admin/updateClient
+    defaults: { _controller: GT4EInterfaceBundle:Default:updateClient }
+    methods:  [POST]
+
+gt4_e_interface_adminCreateClient:
+    path:     /admin/createClient
+    defaults: { _controller: GT4EInterfaceBundle:Default:createClient }
+    methods:  [POST]

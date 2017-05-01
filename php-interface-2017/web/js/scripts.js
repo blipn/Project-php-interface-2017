@@ -38,3 +38,68 @@ function disconnect() {
     //logout +
     window.location = '/login'
 }
+
+
+/*****
+ **
+ **     ADMIN PANEL
+ **
+ *****/
+
+function selectClient() {
+    let client = $("#clientInput").val();
+
+    if (client != "Nouveau Client"){
+        $.ajax({
+            method: "POST",
+            url: "/admin/getClient",
+            data: { client: client }
+        })
+            .done(function( msg ) {
+                alert( "Data Saved: " + msg );
+                $('#nomClient').val(msg.name);
+                $('#phonelClient').val(msg.phone);
+                $('#emailClient').val(msg.email);
+                $('#addrClient').val(msg.addr);
+                $('#alertClient').val(msg.alert);
+                $('#imgClient').val(msg.img);
+            });
+    }
+
+}
+
+function updateClient() {
+    let client = $("#clientInput").val();
+
+    let name = $('#nomClient').val();
+    let phone = $('#phonelClient').val();
+    let email = $('#emailClient').val();
+    let addr = $('#addrClient').val();
+    let alert = $('#alertClient').val();
+    let password = $('#passwordClient').val();
+    let img = $('#imgClient').val();
+
+    if (client == "Nouveau Client"){
+        //on créé
+        $.ajax({
+            method: "POST",
+            url: "/admin/createClient",
+            data: { name: name, phone: phone, email:email, addr:addr, alert:alert, password:password, img:img }
+        })
+            .done(function( msg ) {
+                alert( "Data Saved: " + msg );
+            });
+
+    }else{
+        //on update
+        $.ajax({
+            method: "POST",
+            url: "/admin/updateClient",
+            data: { name: name, phone: phone, email:email, addr:addr, alert:alert, password:password, img:img }
+        })
+            .done(function( msg ) {
+                alert( "Data Saved: " + msg );
+            });
+
+    }
+}
