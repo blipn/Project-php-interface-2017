@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="uilisateur")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UilisateurRepository")
  */
-class Uilisateur
+class Utilisateur
 {
     /**
      * @var int
@@ -56,6 +56,11 @@ class Uilisateur
      */
     private $logo;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Equipement", mappedBy="utilisateur")
+     */
+    private $equipements;
+
 
 
     /**
@@ -73,7 +78,7 @@ class Uilisateur
      *
      * @param string $nom
      *
-     * @return Uilisateur
+     * @return Utilisateur
      */
     public function setNom($nom)
     {
@@ -97,7 +102,7 @@ class Uilisateur
      *
      * @param string $prenom
      *
-     * @return Uilisateur
+     * @return Utilisateur
      */
     public function setPrenom($prenom)
     {
@@ -121,7 +126,7 @@ class Uilisateur
      *
      * @param string $telephone
      *
-     * @return Uilisateur
+     * @return Utilisateur
      */
     public function setTelephone($telephone)
     {
@@ -145,7 +150,7 @@ class Uilisateur
      *
      * @param string $mail
      *
-     * @return Uilisateur
+     * @return Utilisateur
      */
     public function setMail($mail)
     {
@@ -169,7 +174,7 @@ class Uilisateur
      *
      * @param string $logo
      *
-     * @return Uilisateur
+     * @return Utilisateur
      */
     public function setLogo($logo)
     {
@@ -193,13 +198,11 @@ class Uilisateur
      *
      * @param string $equipements
      *
-     * @return Uilisateur
+     * @return Utilisateur
      */
     public function setEquipements($equipements)
     {
-        $this->equipements = $equipements;
-//TODO faire la liaison entre les eux tables
-//        return $this;
+        //
     }
 
     /**
@@ -211,5 +214,35 @@ class Uilisateur
     {
 //        return $this->equipements;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->equipements = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add equipement
+     *
+     * @param \AppBundle\Entity\Equipement $equipement
+     *
+     * @return Utilisateur
+     */
+    public function addEquipement(\AppBundle\Entity\Equipement $equipement)
+    {
+        $this->equipements[] = $equipement;
+
+        return $this;
+    }
+
+    /**
+     * Remove equipement
+     *
+     * @param \AppBundle\Entity\Equipement $equipement
+     */
+    public function removeEquipement(\AppBundle\Entity\Equipement $equipement)
+    {
+        $this->equipements->removeElement($equipement);
+    }
+}

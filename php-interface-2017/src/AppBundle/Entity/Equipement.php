@@ -37,6 +37,12 @@ class Equipement
 
 
     /**
+     * @ORM\ManyToOne(targetEntity="Utilisateur" ,inversedBy="equipements")
+     */
+    private $utilisateur;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -93,5 +99,28 @@ class Equipement
     {
         return $this->photo;
     }
-}
 
+    /**
+     * Set utilisateur
+     *
+     * @param \AppBundle\Entity\Utilisateur $utilisateur
+     *
+     * @return Equipement
+     */
+    public function setUtilisateur(\AppBundle\Entity\Utilisateur $utilisateur = null)
+    {
+        $this->utilisateur = $utilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get utilisateur
+     *
+     * @return \AppBundle\Entity\Utilisateur
+     */
+    public function getUtilisateur()
+    {
+        return $this->utilisateur;
+    }
+}
