@@ -29,3 +29,8 @@ gt4_e_interface_adminaddFaqt:
     path:     /admin/addFaq
     defaults: { _controller: GT4EInterfaceBundle:Default:addFaq }
     methods:  [POST]
+
+gt4_e_interface_admingetAllClients:
+    path:     /admin/getAllClients
+    defaults: { _controller: GT4EInterfaceBundle:Default:getAllClients }
+    methods:  [POST]

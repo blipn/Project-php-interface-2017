@@ -1,4 +1,3 @@
-
 // $.ajax({
 //     method: "POST",
 //     url: "some.php",
@@ -27,9 +26,9 @@ function openTab(evt, tab) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tab).style.display = "block";
 
-    if(typeof evt === "string"){
+    if (typeof evt === "string") {
         document.getElementById(evt).className = "iconTabsSelected tablinks";
-    }else {
+    } else {
         evt.currentTarget.className = "iconTabsSelected tablinks";
     }
 }
@@ -49,14 +48,14 @@ function disconnect() {
 function selectClient() {
     let client = $("#clientInput").val();
 
-    if (client != "Nouveau Client"){
+    if (client != "Nouveau Client") {
         $.ajax({
             method: "POST",
             url: "/admin/getClient",
-            data: { client: client }
+            data: {client: client}
         })
-            .done(function( msg ) {
-                console.log( "Data Recieved: " + msg );
+            .done(function (msg) {
+                console.log("Data Recieved: " + msg);
                 $('#nomClient').val(msg.name);
                 $('#phonelClient').val(msg.phone);
                 $('#emailClient').val(msg.email);
@@ -65,6 +64,31 @@ function selectClient() {
                 $('#imgClient').val(msg.img);
             });
     }
+}
+
+function updateListeClient() {
+    let liste = document.getElementById("client");
+    $.ajax({
+        method: "POST",
+        url: "/admin/getAllClients"
+    })
+        .done(function (msg) {
+            console.log("Data Recieved: " + msg);
+            liste.innerHTML = "";
+            let option = document.createElement("option");
+            option.setAttribute("value", "Nouveau Client");
+            liste.appendChild(option);
+            if (msg == null) return;
+            msg = JSON.parse(msg);
+            console.log(msg);
+
+            for (client in msg){
+                option = document.createElement("option");
+                option.setAttribute("value", msg[client].id + " ." + msg[client].nom);
+                liste.appendChild(option);
+            }
+
+        });
 
 }
 
@@ -80,26 +104,35 @@ function updateClient() {
     let password = $('#passwordClient').val();
     let img = $('#imgClient').val();
 
-    if (client == "Nouveau Client"){
+    if (client == "Nouveau Client") {
         //on créé
         $.ajax({
             method: "POST",
             url: "/admin/createClient",
-            data: { client:client, name: name, phone: phone, email:email, addr:addr, alert:alert, password:password, img:img }
+            data: {
+                client: client,
+                name: name,
+                phone: phone,
+                email: email,
+                addr: addr,
+                alert: alert,
+                password: password,
+                img: img
+            }
         })
-            .done(function( msg ) {
-                console.log( "Data Saved: " + msg );
+            .done(function (msg) {
+                console.log("Data Saved: " + msg);
             });
 
-    }else{
+    } else {
         //on update
         $.ajax({
             method: "POST",
             url: "/admin/updateClient",
-            data: { name: name, phone: phone, email:email, addr:addr, alert:alert, password:password, img:img }
+            data: {name: name, phone: phone, email: email, addr: addr, alert: alert, password: password, img: img}
         })
-            .done(function( msg ) {
-                console.log( "Data Saved: " + msg );
+            .done(function (msg) {
+                console.log("Data Saved: " + msg);
             });
 
     }

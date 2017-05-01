@@ -41,6 +41,20 @@ class DefaultController extends Controller
         return new Response($jsonContent);
     }
 
+    public function getAllClientsAction(Request $request){
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $repository = $this->getDoctrine()->getRepository('GT4EInterfaceBundle:Utilisateur');
+        $users = $repository->findAll();
+
+        $jsonContent = $serializer->serialize($users, 'json');
+        return new Response($jsonContent);
+
+
+    }
+
     public function updateClientAction(Request $request)
     {
 
