@@ -27,7 +27,9 @@ class DefaultController extends Controller
 
     public function getClientAction(Request $request)
     {
-
+        $repository = $this->getDoctrine()->getRepository('GT4EInterfaceBundle:Utilisateur');
+        $user = $repository->findOneByName($request->get('client'));
+        return $user;
     }
 
     public function updateClientAction(Request $request)

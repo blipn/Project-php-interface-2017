@@ -56,7 +56,7 @@ function selectClient() {
             data: { client: client }
         })
             .done(function( msg ) {
-                alert( "Data Saved: " + msg );
+                console.log( "Data Recieved: " + msg );
                 $('#nomClient').val(msg.name);
                 $('#phonelClient').val(msg.phone);
                 $('#emailClient').val(msg.email);
@@ -84,7 +84,7 @@ function updateClient() {
         $.ajax({
             method: "POST",
             url: "/admin/createClient",
-            data: { name: name, phone: phone, email:email, addr:addr, alert:alert, password:password, img:img }
+            data: { client:client, name: name, phone: phone, email:email, addr:addr, alert:alert, password:password, img:img }
         })
             .done(function( msg ) {
                 console.log( "Data Saved: " + msg );
