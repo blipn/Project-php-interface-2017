@@ -22,6 +22,16 @@ class Utilisateur
     private $id;
 
     /**
+     * @ORM\Column(name="login", type="string", length=255)
+     */
+    private $login;
+
+    /**
+     * @ORM\Column(name="hash", type="string", length=255)
+     */
+    private $hash;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
@@ -246,5 +256,53 @@ class Utilisateur
     public function removeEquipement(\AppBundle\Entity\Equipement $equipement)
     {
         $this->equipements->removeElement($equipement);
+    }
+
+    /**
+     * Set login
+     *
+     * @param string $login
+     *
+     * @return Utilisateur
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+
+        return $this;
+    }
+
+    /**
+     * Get login
+     *
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * Set hash
+     *
+     * @param string $hash
+     *
+     * @return Utilisateur
+     */
+    public function setHash($hash)
+    {
+        $this->hash = $hash;
+
+        return $this;
+    }
+
+    /**
+     * Get hash
+     *
+     * @return string
+     */
+    public function getHash()
+    {
+        return $this->hash;
     }
 }
