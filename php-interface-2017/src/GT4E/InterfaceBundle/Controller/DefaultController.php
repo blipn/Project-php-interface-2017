@@ -3,6 +3,7 @@
 namespace GT4E\InterfaceBundle\Controller;
 
 use GT4E\InterfaceBundle\Entity\Faq;
+use GT4E\InterfaceBundle\Entity\Sav;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use GT4E\InterfaceBundle\Entity\Utilisateur;
 use Symfony\Component\Config\Definition\Exception\Exception;
@@ -103,7 +104,7 @@ class DefaultController extends Controller
 
     }
 
-    public function addFaq(Request $request)
+    public function addFaqAction(Request $request)
     {
         try {
             $faq = new Faq();
@@ -114,10 +115,31 @@ class DefaultController extends Controller
             $em = $this->get('doctrine.orm.entity_manager');
             $em->persist($faq);
             $em->flush();
+
+            return new Response("ok");
         } catch (Exception $e) {
             //c'est la vie
         }
     }
+    public function addSavAction(Request $request){ //TODO Faut pas appeller ca dans un form mais en ajax
+        try {
+            $sav = new Sav();
+            $repository = $this->getDoctrine()->getRepository('GT4EInterfaceBundle:Utilisateur');
+            $user = $repository->findOneByNom($request->get('client'));
+            $sav->setUtilisateur($user)
+                ->setMessage($request->get('description'))
+                ->setEtat("Non resolue")
+                ->setDiagnostic("");
+            $em = $this->get('doctrine.orm.entity_manager');
+            $em->persist($sav);
+            $em->flush();
+
+            return new Response("ok");
+        } catch (Exception $e ) {
+
+        }
+    }
+
 
 
 }

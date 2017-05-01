@@ -81,7 +81,7 @@ function updateListeClient() {
 
             for (client in msg){
                 option = document.createElement("option");
-                option.setAttribute("value", msg[client].id + " ." + msg[client].nom);
+                option.setAttribute("value", msg[client].nom);
                 liste.appendChild(option);
             }
 

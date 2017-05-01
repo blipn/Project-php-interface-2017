@@ -47,11 +47,11 @@
 
             <div id="support1" class="jumbotron well activite tab-pane fade in" >
 
-                <form>
+                <form >
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="formGroupExampleInput">Équipements concernant la maintenance :</label><br>
-                            <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="selectEquipement">
+                            <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="selectEquipement" name="equipement">
                                 <option selected>Sélectionner...</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -61,12 +61,12 @@
 
                         <div class="form-group">
                             <label for="formGroupExampleInput">N°:</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                            <input type="text" name="numero" class="form-control" id="formGroupExampleInput" placeholder="Example input">
                         </div>
 
                         <div class="form-group">
                             <label for="formGroupExampleInput">Description du problème</label>
-                            <textarea rows="4" class="form-control" id="formGroupExampleInput" placeholder="Example input"></textarea>
+                            <textarea rows="4" name="description" class="form-control" id="formGroupExampleInput" placeholder="description"></textarea>
                         </div>
 
                     </div>
@@ -75,7 +75,7 @@
                         <div class="form-group text-center">
                             <label class="custom-file">
                                 <label for="formGroupExampleInput">Joindre les logs :</label>
-                                <input type="file" id="file" class="form-control custom-file-input">
+                                <input type="file" id="file" name="log" class="form-control custom-file-input">
                                 <span class="custom-file-control"></span><br>
                             </label>
                         </div>
@@ -83,7 +83,7 @@
                         <div class="form-group text-center">
                             <label class="custom-file">
                                 <label for="formGroupExampleInput">Joindre les photos :</label>
-                                <input type="file" id="file" class="form-control custom-file-input">
+                                <input type="file" id="file" name="photo" class="form-control custom-file-input">
                                 <span class="custom-file-control"></span><br>
                             </label>
                         </div>

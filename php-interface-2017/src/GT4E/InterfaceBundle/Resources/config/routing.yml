@@ -34,3 +34,8 @@ gt4_e_interface_admingetAllClients:
     path:     /admin/getAllClients
     defaults: { _controller: GT4EInterfaceBundle:Default:getAllClients }
     methods:  [POST]
+
+gt4_e_interface_adminaddSav:
+    path:     /admin/addSav
+    defaults: { _controller: GT4EInterfaceBundle:Default:addSav }
+    methods:  [POST]
