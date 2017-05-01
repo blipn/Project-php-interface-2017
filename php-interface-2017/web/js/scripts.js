@@ -68,6 +68,7 @@ function selectClient() {
 
 }
 
+
 function updateClient() {
     let client = $("#clientInput").val();
 

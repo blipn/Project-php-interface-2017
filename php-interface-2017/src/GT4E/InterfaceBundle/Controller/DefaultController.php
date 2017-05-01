@@ -2,11 +2,16 @@
 
 namespace GT4E\InterfaceBundle\Controller;
 
+use GT4E\InterfaceBundle\Entity\Faq;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use GT4E\InterfaceBundle\Entity\Utilisateur;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class DefaultController extends Controller
 {
@@ -29,7 +34,11 @@ class DefaultController extends Controller
     {
         $repository = $this->getDoctrine()->getRepository('GT4EInterfaceBundle:Utilisateur');
         $user = $repository->findOneByNom($request->get('client'));
-        return $user;
+        $encoders = array(new XmlEncoder(), new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+        $serializer = new Serializer($normalizers, $encoders);
+        $jsonContent = $serializer->serialize($user, 'json');
+        return new Response($jsonContent);
     }
 
     public function updateClientAction(Request $request)
@@ -59,6 +68,21 @@ class DefaultController extends Controller
             return $e;
         }
 
+    }
+
+    public function addFaq(Request $request){
+        try {
+            $faq = new Faq();
+            $faq->setCategorie($request->get('categorie'))
+                ->setQuestion($request->get('question'))
+                ->setReponse($request->get('reponse'));
+
+            $em = $this->get('doctrine.orm.entity_manager');
+            $em->persist($faq);
+            $em->flush();
+        } catch (Exception $e){
+            //c'est la vie
+        }
     }
 
 
