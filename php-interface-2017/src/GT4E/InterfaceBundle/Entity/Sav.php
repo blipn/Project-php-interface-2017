@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace GT4E\InterfaceBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
