@@ -1,3 +1,117 @@
-<p>
-    Un problème avec équipement ?
-</p>
+<div class="row">
+
+    <div class="col-md-6">
+        <a data-toggle="tab" href="#support1">
+            <div class="jumbotron well activite icoSupportJumbo">
+                <h2 class="icoSupport"><i class="fa fa-user-md fa-3x" aria-hidden="true"></i><br>NOUVEAU SAV</h2>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-6">
+        <a data-toggle="tab" href="#support2">
+            <div class="jumbotron well activite icoSupportJumbo">
+                <h2 class="icoSupport"><i class="fa fa-hourglass-start fa-3x" aria-hidden="true"></i><br>SUIVRE UN SAV</h2>
+            </div>
+        </a>
+    </div>
+
+    <div class="col-md-12">
+        <div class="tab-content">
+
+            <div id="support1" class="jumbotron well activite tab-pane fade in" >
+
+                <form>
+                    <div class="col-md-6">
+                        
+                        <label>Selectionnez un client</label><br>
+                        <input list="client" name="client">
+                        <datalist id="client">
+                            <option value="Nouveau Client">
+                            <option value="Client1">
+                            <option value="Client2">
+                            <option value="Client3">
+                            <option value="Client4">
+                        </datalist>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Équipements concernant la maintenance :</label><br>
+                            <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="selectEquipement">
+                                <option selected>Sélectionner...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">N°:</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Description du problème</label>
+                            <textarea rows="4" class="form-control" id="formGroupExampleInput" placeholder="Example input"></textarea>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group text-center">
+                            <label class="custom-file">
+                                <label for="formGroupExampleInput">Joindre les logs :</label>
+                                <input type="file" id="file" class="form-control custom-file-input">
+                                <span class="custom-file-control"></span><br>
+                            </label>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <label class="custom-file">
+                                <label for="formGroupExampleInput">Joindre les photos :</label>
+                                <input type="file" id="file" class="form-control custom-file-input">
+                                <span class="custom-file-control"></span><br>
+                            </label>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">ENVOYER</button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div id="support2" class="tab-pane fade in" >
+
+                <div class="col-md-6">
+                    <select class="form-control custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                        <option selected>Sélectionner...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12" style="font-size: xx-large">
+                    <i class="fa fa-truck fa-flip-horizontal fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-arrow-right suppArrow" aria-hidden="true"></i>
+                    <i class="fa fa-archive fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-arrow-right suppArrow" aria-hidden="true"></i>
+                    <i class="fa fa-stethoscope fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-arrow-right suppArrow" aria-hidden="true"></i>
+                    <i class="fa fa-calculator fa-3x" aria-hidden="true">
+                        <button class="suppCalc">Télécharger le document</button>
+                    </i>
+                    <i class="fa fa-arrow-right suppArrow" aria-hidden="true"></i>
+                    <i class="fa fa-cogs fa-3x" aria-hidden="true"></i>
+                    <i class="fa fa-arrow-right suppArrow" aria-hidden="true"></i>
+                    <i class="fa fa-truck fa-4x" aria-hidden="true"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
