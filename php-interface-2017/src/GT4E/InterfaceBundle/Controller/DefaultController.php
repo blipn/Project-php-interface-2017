@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use GT4E\InterfaceBundle\Entity\Utilisateur;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -51,7 +52,7 @@ class DefaultController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return "ok";
+            return new Response("ok");
         }catch (Exception $e){
             return $e;
         }

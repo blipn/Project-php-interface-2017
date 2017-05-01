@@ -87,7 +87,7 @@ function updateClient() {
             data: { name: name, phone: phone, email:email, addr:addr, alert:alert, password:password, img:img }
         })
             .done(function( msg ) {
-                alert( "Data Saved: " + msg );
+                console.log( "Data Saved: " + msg );
             });
 
     }else{
@@ -98,7 +98,7 @@ function updateClient() {
             data: { name: name, phone: phone, email:email, addr:addr, alert:alert, password:password, img:img }
         })
             .done(function( msg ) {
-                alert( "Data Saved: " + msg );
+                console.log( "Data Saved: " + msg );
             });
 
     }
