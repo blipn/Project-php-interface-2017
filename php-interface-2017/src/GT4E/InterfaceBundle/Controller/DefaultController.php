@@ -17,7 +17,7 @@ class DefaultController extends Controller
 {
     public function indexAction(Request $request)
     {
-        if ( ! $request->get('user') ||  !$request->get('password') )
+        if (!$request->get('user') || !$request->get('password'))
             return $this->render('GT4EInterfaceBundle:Default:login.html.twig');
         else {
             $repository = $this->getDoctrine()->getRepository('GT4EInterfaceBundle:Utilisateur');
@@ -25,7 +25,11 @@ class DefaultController extends Controller
             $pass = hash('sha256', $request->get('password'));
             if ($user) {
                 if ($pass == $user->getHash()) {
-                    return $this->render('GT4EInterfaceBundle:Default:index.html.twig');
+                    return $this->render('GT4EInterfaceBundle:Default:index.html.twig' ,
+                        ["nom" => $user->getNom(),
+                        "numero" => $user->getTelephone(),
+                        "mail" => $user->getMail() ,
+                        "adresse" => $user->getAdresse()]);
                 }
             }
         }
@@ -37,9 +41,13 @@ class DefaultController extends Controller
         return $this->render('GT4EInterfaceBundle:Default:login.html.twig');
     }
 
-    public function adminAction()
+    public function adminAction(Request $request)
     {
-        return $this->render('GT4EInterfaceBundle:Default:admin.html.twig');
+
+
+            return $this->render('GT4EInterfaceBundle:Default:admin.html.twig');
+
+
     }
 
     public function getClientAction(Request $request)
@@ -53,7 +61,8 @@ class DefaultController extends Controller
         return new Response($jsonContent);
     }
 
-    public function getAllClientsAction(){
+    public function getAllClientsAction()
+    {
         $encoders = array(new XmlEncoder(), new JsonEncoder());
         $normalizers = array(new ObjectNormalizer());
         $serializer = new Serializer($normalizers, $encoders);
@@ -73,7 +82,7 @@ class DefaultController extends Controller
     public function createClientAction(Request $request)
     {
 
-        try{
+        try {
             $user = new Utilisateur();
             $user->setNom($request->get('name'))
                 ->setTelephone($request->get('phone'))
@@ -88,13 +97,14 @@ class DefaultController extends Controller
             $em->flush();
 
             return new Response("ok");
-        }catch (Exception $e){
+        } catch (Exception $e) {
             return $e;
         }
 
     }
 
-    public function addFaq(Request $request){
+    public function addFaq(Request $request)
+    {
         try {
             $faq = new Faq();
             $faq->setCategorie($request->get('categorie'))
@@ -104,7 +114,7 @@ class DefaultController extends Controller
             $em = $this->get('doctrine.orm.entity_manager');
             $em->persist($faq);
             $em->flush();
-        } catch (Exception $e){
+        } catch (Exception $e) {
             //c'est la vie
         }
     }
